@@ -1,11 +1,11 @@
-import './App.css';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import React from 'react';
 import Navbar from './components/layouts/Navbar';
 import PageHeader from './components/layouts/PageHeader';
 import Footer from './components/layouts/Footer';
-import Album from './components/characters/CharactersList';
+import Characters from './components/characters/Characters';
+import CharacterDetails from './components/characters/CharacterDetails';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -22,7 +22,7 @@ function App() {
         <Navbar />
         <PageHeader />
         <main>
-          <Album />
+          <Characters />
         </main>
         <Footer />
       </ApolloProvider>

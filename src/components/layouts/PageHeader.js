@@ -32,7 +32,7 @@ const PageHeader = () => {
             paragraph
           >
             React.JS Application displaying all character details from the Show
-            "Rick and Morty
+            "Rick and Morty"
           </Typography>
           <Stack
             sx={{ pt: 4 }}
