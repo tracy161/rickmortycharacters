@@ -15,7 +15,7 @@ const PageHeader = () => {
           pb: 6,
         }}
       >
-        <Container maxWidth='sm'>
+        <Container maxWidth='lg'>
           <Typography
             component='h1'
             variant='h2'
