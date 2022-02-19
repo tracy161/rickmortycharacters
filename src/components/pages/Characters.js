@@ -12,9 +12,11 @@ import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 
 import useCharacters from '../../containerHooks/useCharacters';
+import useSearch from '../../containerHooks/useSearch';
 
 const Characters = () => {
-  const { loading, error, data } = useCharacters(3);
+  const { loading, error, data } = useCharacters(1);
+
 
   if (loading)
     return (

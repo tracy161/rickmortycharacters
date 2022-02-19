@@ -49,6 +49,9 @@ const CharacterDetails = () => {
                 <Typography gutterBottom variant='h5' component='h2'>
                   {data.character.name}
                 </Typography>
+                {data.character.episode?.map((episode) => (
+                  <p>{episode.name}</p>
+                ))}
               </CardContent>
               <CardActions></CardActions>
             </Card>

@@ -6,7 +6,21 @@ const GET_CHARACTER_DETAILS = gql`
     character(id: $id) {
       id
       name
+      status
+      species
+      type
+      gender
+      origin {
+        name
+      }
+      location {
+        name
+      }
       image
+      episode {
+        name
+      }
+      created
     }
   }
 `;
