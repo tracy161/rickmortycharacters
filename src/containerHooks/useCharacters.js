@@ -2,8 +2,8 @@ import { gql } from 'apollo-boost';
 import { useQuery } from '@apollo/react-hooks';
 
 const GET_CHARACTERS = gql`
-  query Characters($page: Int) {
-    characters(page: $page) {
+  query Characters($page: Int, $name: String) {
+    characters(page: $page, filter: { name: $name }) {
       results {
         id
         name
@@ -13,9 +13,12 @@ const GET_CHARACTERS = gql`
   }
 `;
 
-const useCharacters = (page) => {
+const useCharacters = (page, name) => {
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
-    variables: { page: page },
+    variables: {
+      page: page,
+      name: name
+    }
   });
 
   return {

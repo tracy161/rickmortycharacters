@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -9,14 +9,24 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
 import { Link } from 'react-router-dom';
 
 import useCharacters from '../../containerHooks/useCharacters';
-import useSearch from '../../containerHooks/useSearch';
 
 const Characters = () => {
-  const { loading, error, data } = useCharacters(1);
+  const [page, setPage] = useState(1);
+  const [name, setName] = useState('');
+  const text = useRef(null);
 
+  const onClick = (e) => {
+    e.preventDefault();
+    setName(text.current.value);
+  };
+
+  const { loading, error, data } = useCharacters(page, name);
 
   if (loading)
     return (
@@ -33,6 +43,25 @@ const Characters = () => {
 
   return (
     <>
+      <Stack sx={{ pt: 4 }} direction='row' spacing={2} justifyContent='center'>
+        <Paper
+          component='form'
+          sx={{
+            p: '2px 4px',
+            display: 'flex',
+            alignItems: 'center',
+            width: 500,
+          }}
+        >
+          <input
+            type='text'
+            placeholder='Search Characters'
+            ref={text}
+          />
+          <Button onClick={(e) => onClick(e)}>Search</Button>
+        </Paper>
+      </Stack>
+
       <Container sx={{ py: 8 }} maxWidth='lg'>
         <Grid container spacing={4}>
           {data?.characters?.results.map((character) => (
@@ -55,7 +84,9 @@ const Characters = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Link to={`/${character.id}`}><Button size='small'>View Details</Button></Link>
+                  <Link to={`/${character.id}`}>
+                    <Button size='small'>View Details</Button>
+                  </Link>
                 </CardActions>
               </Card>
             </Grid>

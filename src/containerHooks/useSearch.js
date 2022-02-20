@@ -13,11 +13,12 @@ const GET_CHARACTERS_SEARCH = gql`
   }
 `;
 
-const useSearch = (name) => {
+const useSearch = (page, name) => {
   const { loading, error, data } = useQuery(GET_CHARACTERS_SEARCH, {
     variables: {
-        name: name
-    }
+      page,
+      name,
+    },
   });
 
   return {

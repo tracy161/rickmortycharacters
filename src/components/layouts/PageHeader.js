@@ -1,9 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import SearchBar from '../search/SearchBar';
 
 const PageHeader = () => {
   return (
@@ -34,14 +32,6 @@ const PageHeader = () => {
             React.JS Application displaying all character details from the Show
             "Rick and Morty"
           </Typography>
-          <Stack
-            sx={{ pt: 4 }}
-            direction='row'
-            spacing={2}
-            justifyContent='center'
-          >
-            <SearchBar />
-          </Stack>
         </Container>
       </Box>
     </>
