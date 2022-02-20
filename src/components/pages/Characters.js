@@ -11,7 +11,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
+import Pagination from '@mui/material/Pagination';
 import { Link } from 'react-router-dom';
 
 import useCharacters from '../../containerHooks/useCharacters';
@@ -24,6 +24,10 @@ const Characters = () => {
   const onClick = (e) => {
     e.preventDefault();
     setName(text.current.value);
+  };
+
+  const handleChange = (e, value) => {
+    setPage(value);
   };
 
   const { loading, error, data } = useCharacters(page, name);
@@ -53,11 +57,7 @@ const Characters = () => {
             width: 500,
           }}
         >
-          <input
-            type='text'
-            placeholder='Search Characters'
-            ref={text}
-          />
+          <input type='text' placeholder='Search Characters' ref={text} />
           <Button onClick={(e) => onClick(e)}>Search</Button>
         </Paper>
       </Stack>
@@ -93,6 +93,19 @@ const Characters = () => {
           ))}
         </Grid>
       </Container>
+      <Stack sx={{ pt: 4 }} direction='row' spacing={2} justifyContent='center'>
+        {data?.characters?.info.pages > 1 && (
+          <>
+            <Pagination
+              onChange={handleChange}
+              page={page}
+              count={data?.characters?.info.pages}
+              color='primary'
+              size='large'
+            />
+          </>
+        )}
+      </Stack>
     </>
   );
 };

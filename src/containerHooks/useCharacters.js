@@ -4,6 +4,12 @@ import { useQuery } from '@apollo/react-hooks';
 const GET_CHARACTERS = gql`
   query Characters($page: Int, $name: String) {
     characters(page: $page, filter: { name: $name }) {
+      info {
+        count
+        next
+        prev
+        pages
+      }
       results {
         id
         name

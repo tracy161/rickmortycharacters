@@ -50,7 +50,10 @@ const CharacterDetails = () => {
                   {data.character.name}
                 </Typography>
                 {data.character.episode?.map((episode) => (
-                  <p>{episode.name}</p>
+                  <>
+                    <h2>Episode</h2>
+                    <p>{episode.name}</p>
+                  </>
                 ))}
               </CardContent>
               <CardActions></CardActions>
