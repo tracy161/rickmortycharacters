@@ -11,6 +11,9 @@ import Typography from '@mui/material/Typography';
 import useCharacterDetails from '../../containerHooks/useCharacterDetails';
 import { useParams } from 'react-router-dom';
 
+import PageHeaderDetails from '../layouts/PageHeaderDetails';
+import MainFeaturedPost from '../layouts/PageHeaderDetails';
+
 const CharacterDetails = () => {
   const { id } = useParams();
   const { data, loading, error } = useCharacterDetails(id);
@@ -30,9 +33,10 @@ const CharacterDetails = () => {
 
   return (
     <>
+      <MainFeaturedPost />
       <Container sx={{ py: 8 }} maxWidth='lg'>
         <Grid container spacing={4}>
-          <Grid xs={12} sm={6} md={3}>
+          <Grid>
             <Card
               sx={{
                 height: '100%',
@@ -49,11 +53,9 @@ const CharacterDetails = () => {
                 <Typography gutterBottom variant='h5' component='h2'>
                   {data.character.name}
                 </Typography>
-                {data.character.episode?.map((episode) => (
-                  <>
-                    <h2>Episode</h2>
-                    <p>{episode.name}</p>
-                  </>
+                <h2>Episode</h2>
+                {data.character.episode?.map((episode, index) => (
+                  <p key={index}>{episode.name}</p>
                 ))}
               </CardContent>
               <CardActions></CardActions>

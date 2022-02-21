@@ -24,7 +24,6 @@ const Characters = () => {
   const [gender, setGender] = useState('');
   const [species, setSpecies] = useState('');
   const [status, setStatus] = useState('');
-  const [type, setType] = useState('');
 
   const text = useRef(null);
 
@@ -40,12 +39,12 @@ const Characters = () => {
   };
 
   const handleFilterSpecies = (e) => {
-    setSpecies(e.target.value)
-  }
+    setSpecies(e.target.value);
+  };
 
   const handleFilterStatus = (e) => {
-    setStatus(e.target.value)
-  }
+    setStatus(e.target.value);
+  };
 
   const handleChange = (e, value) => {
     setPage(value);
@@ -56,8 +55,7 @@ const Characters = () => {
     name,
     gender,
     species,
-    status,
-    type
+    status
   );
 
   if (loading)
@@ -84,7 +82,7 @@ const Characters = () => {
             handleFilterStatus={handleFilterStatus}
           />
         </Stack>
-        
+
         <Stack direction='row' spacing={2} style={{ justifyContent: 'center' }}>
           <Paper
             component='form'
