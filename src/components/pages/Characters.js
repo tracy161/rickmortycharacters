@@ -26,8 +26,6 @@ const Characters = () => {
 
   const text = useRef(null);
 
-  const filterValue = useRef('');
-
   const handleClick = (e) => {
     e.preventDefault();
     setName(text.current.value);
@@ -98,7 +96,6 @@ const Characters = () => {
       <Container>
         <Stack direction='row' spacing={2} style={{ justifyContent: 'center' }}>
           <FilterFields
-            filterValue={filterValue}
             handleFilterGender={handleFilterGender}
             handleFilterSpecies={handleFilterSpecies}
             handleFilterStatus={handleFilterStatus}
