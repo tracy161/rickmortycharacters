@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
-function MainFeaturedPost({data}) {
+function MainFeaturedPost({ data }) {
   return (
     <Paper
       sx={{
@@ -19,8 +19,6 @@ function MainFeaturedPost({data}) {
         backgroundImage: `url(https://source.unsplash.com/random)`,
       }}
     >
-      {/* Increase the priority of the hero background image */}
-
       <Box
         sx={{
           position: 'absolute',
@@ -57,7 +55,5 @@ function MainFeaturedPost({data}) {
     </Paper>
   );
 }
-
-
 
 export default MainFeaturedPost;

@@ -27,7 +27,7 @@ function App() {
             path='/'
             element={
               <>
-                <PageHeader /> 
+                <PageHeader />
                 <Characters />
               </>
             }

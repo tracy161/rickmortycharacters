@@ -49,6 +49,10 @@ const Characters = () => {
     setPage(value);
   };
 
+  const clear = () => {
+    window.location.reload();
+  };
+
   const { loading, error, data } = useCharacters(
     page,
     name,
@@ -68,7 +72,26 @@ const Characters = () => {
         </Box>
       </Container>
     );
-  if (error) return <p>Error {error.message}</p>;
+  if (error)
+    return (
+      <Container sx={{ py: 8 }} maxWidth='lg'>
+        <Box
+          sx={{ display: 'flex' }}
+          style={{ margin: 'auto', justifyContent: 'center', padding: '50px' }}
+        >
+          <Typography gutterBottom variant='h5' component='h2'>
+            Error {error.message}
+          </Typography>
+          <Button
+            onClick={clear}
+            variant='contained'
+            style={{ margin: '0 20px' }}
+          >
+            Back to Characters
+          </Button>
+        </Box>
+      </Container>
+    );
 
   return (
     <>
@@ -81,8 +104,7 @@ const Characters = () => {
             handleFilterStatus={handleFilterStatus}
           />
         </Stack>
-
-        <Stack direction='row' spacing={2} style={{ justifyContent: 'center' }}>
+        <Stack direction='row' mt={4} style={{ justifyContent: 'center' }}>
           <Paper
             component='form'
             sx={{
@@ -96,9 +118,13 @@ const Characters = () => {
               type='text'
               placeholder='Search Characters Name'
               ref={text}
+              style={input__style}
             />
             <Button onClick={(e) => handleClick(e)}>Search</Button>
           </Paper>
+          <Button onClick={clear} style={{ padding: '16px 20px' }}>
+            Clear Search
+          </Button>
         </Stack>
       </Container>
       <Container sx={{ py: 8 }} maxWidth='lg'>
@@ -123,7 +149,10 @@ const Characters = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Link to={`/${character.id}`} style={{textDecoration: 'none'}}>
+                  <Link
+                    to={`/${character.id}`}
+                    style={{ textDecoration: 'none' }}
+                  >
                     <Button size='small'>View Details</Button>
                   </Link>
                 </CardActions>
@@ -147,6 +176,12 @@ const Characters = () => {
       </Stack>
     </>
   );
+};
+
+const input__style = {
+  width: '100%',
+  border: 'none',
+  padding: '16px',
 };
 
 export default Characters;

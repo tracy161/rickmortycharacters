@@ -9,8 +9,8 @@ const PageHeader = () => {
       <Box
         sx={{
           bgcolor: 'background.paper',
-          pt: 8,
-          pb: 6,
+          pt: 6,
+          pb: 3,
         }}
       >
         <Container maxWidth='lg'>

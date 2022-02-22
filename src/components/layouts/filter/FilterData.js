@@ -10,5 +10,3 @@ export const speciesData = [
 ];
 
 export const statusData = ['Alive', 'Dead', 'Unknown'];
-
-
