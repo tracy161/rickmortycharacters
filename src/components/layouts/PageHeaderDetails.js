@@ -1,14 +1,11 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
-function MainFeaturedPost(props) {
-  const { post } = props;
-
+function MainFeaturedPost({data}) {
   return (
     <Paper
       sx={{
@@ -23,7 +20,7 @@ function MainFeaturedPost(props) {
       }}
     >
       {/* Increase the priority of the hero background image */}
-      
+
       <Box
         sx={{
           position: 'absolute',
@@ -43,15 +40,17 @@ function MainFeaturedPost(props) {
               pr: { md: 0 },
             }}
           >
-            <Typography component="h3" variant="h3" color="inherit" gutterBottom >
-              <h3>Title</h3>
-            </Typography>
-            <Typography variant="h5" color="inherit" paragraph>
-              <h2>Description</h2>
-            </Typography>
-            <Link variant="subtitle1" href="#">
-              <h3>Link</h3>
-            </Link>
+            {' '}
+            <Container>
+              <Typography
+                component='h3'
+                variant='h3'
+                color='inherit'
+                gutterBottom
+              >
+                {data.character.name}
+              </Typography>
+            </Container>
           </Box>
         </Grid>
       </Grid>
@@ -59,14 +58,6 @@ function MainFeaturedPost(props) {
   );
 }
 
-MainFeaturedPost.propTypes = {
-  post: PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    imageText: PropTypes.string.isRequired,
-    linkText: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-};
+
 
 export default MainFeaturedPost;

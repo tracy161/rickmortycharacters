@@ -13,7 +13,7 @@ const FilterFields = ({handleFilterGender, handleFilterSpecies, handleFilterStat
       <FormControl sx={{ m: 1, minWidth: 170 }}>
         {/* <InputLabel id='demo-simple-select-label'>Gender</InputLabel> */}
         <select onChange={handleFilterGender}>
-          <option disable value="">--Choose Gender--</option>
+          <option disable="true" value="">--Choose Gender--</option>
           {genderData.map((data) => (
             <option key={data} value={data}>
               {data}
@@ -24,7 +24,7 @@ const FilterFields = ({handleFilterGender, handleFilterSpecies, handleFilterStat
       <FormControl sx={{ m: 1, minWidth: 170 }}>
         {/* <InputLabel id='demo-simple-select-label'>Species</InputLabel> */}
         <select onChange={handleFilterSpecies}>
-        <option value="">--Choose Species--</option>
+        <option disable="true" value="">--Choose Species--</option>
           {speciesData.map((data) => (
             <option key={data} value={data}>
               {data}
@@ -35,7 +35,7 @@ const FilterFields = ({handleFilterGender, handleFilterSpecies, handleFilterStat
       <FormControl sx={{ m: 1, minWidth: 170 }}>
         {/* <InputLabel id='demo-simple-select-label'>Status</InputLabel> */}
         <select onChange={handleFilterStatus}>
-        <option value="">--Choose Status--</option>
+        <option disable="true" value="">--Choose Status--</option>
           {statusData.map((data) => (
             <option key={data} value={data}>
               {data}

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -124,7 +123,7 @@ const Characters = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Link to={`/${character.id}`}>
+                  <Link to={`/${character.id}`} style={{textDecoration: 'none'}}>
                     <Button size='small'>View Details</Button>
                   </Link>
                 </CardActions>

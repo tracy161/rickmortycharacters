@@ -9,6 +9,6 @@ export const speciesData = [
   'Mythological',
 ];
 
-export const statusData = ['Alive', 'Dead'];
+export const statusData = ['Alive', 'Dead', 'Unknown'];
 
 
