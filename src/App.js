@@ -11,7 +11,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CharacterDetails from './components/pages/CharacterDetails';
 
 const client = new ApolloClient({
-  uri: 'https://rickandmortyapi.com/graphql/',
+  uri: process.env.REACT_APP_API_URL,
   cache: new InMemoryCache(),
 });
 
