@@ -17,18 +17,9 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Instructions
-For the technical round of the interview we would like you to create a ReactJS application that
-displays characters from the Rick and Morty GraphQL API.
+## Completed Tasks
 
-https://rickandmortyapi.com/documentation/#graphql
-
-This project was bootstrapped using create-react-app and has Apollo Client already configured. A basic
-example of how to use @apollo/react-hooks can be found in containers/Characters.js
-
-When you are done send us back a link to your git repository.
-
-If you have any questions please reach out to david@mojocrowe.com
+Please find below the completed tasks (both minimum and advanced requirements)
 
 ### Minimum requirements
 
@@ -45,14 +36,7 @@ Create the following pages:
 ### Advanced
 
 - Add pagination to the Characters page
-- Allowing filtering of characters based on gender, species, status, and type
-- Write a unit test for one of your presentational components
-
-## Resources
-
-Apollo Hooks: https://www.apollographql.com/docs/react/api/react-hooks
-
-GraphQL Playground is a great way to interact with a GraphQL endpoint before implementing it
-into you own apllication. The Rick and Morty playground can be found here:
-
-https://rickandmortyapi.com/graphql
+- Allowing filtering of characters based on gender, species, status, and type (type has countless options to filters for all characters so I did not do filter for type)
+- Write a unit test for one of your presentational components (2 unit tests)
+  + Unit Test for Navbar Router Component
+  + Unit Test for Character Details Component to check if the Details page component is rendered or not
