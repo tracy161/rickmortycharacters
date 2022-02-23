@@ -38,5 +38,5 @@ Create the following pages:
 - Add pagination to the Characters page
 - Allowing filtering of characters based on gender, species, status, and type (type has countless options to filters for all characters so I did not do filter for type)
 - Write a unit test for one of your presentational components (2 unit tests)
-  + Unit Test for Navbar Router Component
-  + Unit Test for Character Details Component to check if the Details page component is rendered or not
+  - Unit Test for Navbar Router Component
+  - Unit Test for Character Details Component to check if the Details page component is rendered or not
