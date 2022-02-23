@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Navbar from '../layouts/Navbar';
+import Navbar from '../components/layouts/Navbar';
 import { MemoryRouter } from 'react-router-dom';
 import { act } from 'react-dom/test-utils';
 

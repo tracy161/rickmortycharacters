@@ -4,8 +4,8 @@ import renderer from 'react-test-renderer';
 import {
   GET_CHARACTER_DETAILS,
   UseCharacterDetails,
-} from '../../containerHooks/useCharacterDetails';
-import CharacterDetails from '../pages/CharacterDetails';
+} from '../containerHooks/useCharacterDetails';
+import CharacterDetails from '../components/pages/CharacterDetails';
 
 const mocks = [
   {

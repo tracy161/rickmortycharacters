@@ -31,7 +31,19 @@ const CharacterDetails = () => {
         </Box>
       </Container>
     );
-  if (error) return <p>Error {error.message}</p>;
+  if (error)
+    return (
+      <Container sx={{ py: 8 }} maxWidth='lg'>
+        <Box
+          sx={{ display: 'flex' }}
+          style={{ margin: 'auto', justifyContent: 'center', padding: '50px' }}
+        >
+          <Typography gutterBottom variant='h5' component='h2'>
+            Error {error.message}
+          </Typography>
+        </Box>
+      </Container>
+    );
 
   return (
     <>
