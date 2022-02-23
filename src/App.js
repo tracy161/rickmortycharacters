@@ -12,7 +12,7 @@ import CharacterDetails from './components/pages/CharacterDetails';
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql/',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 const theme = createTheme();

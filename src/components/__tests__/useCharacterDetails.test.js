@@ -1,7 +1,10 @@
 import React from 'react';
-import MockedProvider from '@apollo/client/testing';
-import TestRenderer from 'react-test-renderer';
-import { GET_CHARACTER_DETAILS, UseCharacterDetails } from '../../containerHooks/useCharacterDetails';
+import { MockedProvider } from '@apollo/client/testing';
+import renderer from 'react-test-renderer';
+import {
+  GET_CHARACTER_DETAILS,
+  UseCharacterDetails,
+} from '../../containerHooks/useCharacterDetails';
 import CharacterDetails from '../pages/CharacterDetails';
 
 const mocks = [
@@ -12,19 +15,23 @@ const mocks = [
         id: 1,
       },
     },
-    error: new Error('An error occurred'),
+    result: {
+      data: {
+        character: {
+          id: '1',
+          name: 'Rick Sanchez',
+          status: 'Alive',
+          gender: 'Male',
+        },
+      },
+    },
   },
 ];
 
-test('renders without error', async () => {
-  const component = TestRenderer.create(
+it('renders without error', () => {
+  renderer.create(
     <MockedProvider mocks={mocks} addTypename={false}>
       <CharacterDetails />
     </MockedProvider>
   );
-
-  await new Promise(resolve => setTimeout(resolve, 0)); // wait for response
-
-  const tree = component.toJSON();
-  expect(tree.children).toContain('An error occurred');
 });

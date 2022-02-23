@@ -1,7 +1,6 @@
 // import { gql } from 'apollo-boost';
 // import { useQuery } from '@apollo/react-hooks';
-import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag'
+import { gql, useQuery } from '@apollo/client';
 
 export const GET_CHARACTER_DETAILS = gql`
   query CharacterDetails($id: ID!) {

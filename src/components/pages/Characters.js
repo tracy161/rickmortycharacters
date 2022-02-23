@@ -14,7 +14,7 @@ import Paper from '@mui/material/Paper';
 import Pagination from '@mui/material/Pagination';
 
 import { Link } from 'react-router-dom';
-import useCharacters from '../../containerHooks/useCharacters';
+import { UseCharacters } from '../../containerHooks/useCharacters';
 import FilterFields from '../layouts/filter/FilterFields';
 
 const Characters = () => {
@@ -51,13 +51,13 @@ const Characters = () => {
     window.location.reload();
   };
 
-  const { loading, error, data } = useCharacters(
+  const { loading, error, data } = UseCharacters({
     page,
     name,
     gender,
     species,
-    status
-  );
+    status,
+  });
 
   if (loading)
     return (

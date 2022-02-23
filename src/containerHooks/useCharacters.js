@@ -2,9 +2,25 @@
 // import { useQuery } from '@apollo/react-hooks';
 import { gql, useQuery } from '@apollo/client';
 
-const GET_CHARACTERS = gql`
-  query Characters($page: Int, $name: String, $gender: String, $species: String, $status: String, $type: String) {
-    characters(page: $page, filter: { name: $name, gender: $gender, species: $species, status: $status, type: $type }) {
+export const GET_CHARACTERS = gql`
+  query Characters(
+    $page: Int
+    $name: String
+    $gender: String
+    $species: String
+    $status: String
+    $type: String
+  ) {
+    characters(
+      page: $page
+      filter: {
+        name: $name
+        gender: $gender
+        species: $species
+        status: $status
+        type: $type
+      }
+    ) {
       info {
         count
         next
@@ -24,7 +40,14 @@ const GET_CHARACTERS = gql`
   }
 `;
 
-const useCharacters = (page, name, gender, species, status, type) => {
+export const UseCharacters = ({
+  page,
+  name,
+  gender,
+  species,
+  status,
+  type,
+}) => {
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: {
       page: page,
@@ -32,8 +55,8 @@ const useCharacters = (page, name, gender, species, status, type) => {
       gender: gender,
       species: species,
       status: status,
-      type: type
-    }
+      type: type,
+    },
   });
 
   return {
@@ -43,4 +66,4 @@ const useCharacters = (page, name, gender, species, status, type) => {
   };
 };
 
-export default useCharacters;
+//export default useCharacters;
