@@ -1,6 +1,7 @@
 import React from 'react';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
+// import ApolloClient from 'apollo-boost';
+// import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Navbar from './components/layouts/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import PageHeader from './components/layouts/PageHeader';
@@ -11,6 +12,7 @@ import CharacterDetails from './components/pages/CharacterDetails';
 
 const client = new ApolloClient({
   uri: 'https://rickandmortyapi.com/graphql/',
+  cache: new InMemoryCache()
 });
 
 const theme = createTheme();

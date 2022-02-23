@@ -20,7 +20,7 @@ const Footer = () => {
         </Typography>
         <Typography variant='body2' color='text.secondary' align='center'>
           {'Copyright © '}
-          <Link color='inherit' href='#!'>
+          <Link color='inherit'to='/'>
             Rick & Morty Characters
           </Link>{' '}
           {new Date().getFullYear()}

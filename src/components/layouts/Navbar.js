@@ -6,6 +6,7 @@ import CameraIcon from '@mui/icons-material/PhotoCamera';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
 
+
 const Navbar = () => {
   return (
     <>
@@ -14,7 +15,7 @@ const Navbar = () => {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant='h6' color='inherit' noWrap>
-            <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
+            <Link to='/' id="home-link" style={{ textDecoration: 'none', color: 'white' }}>
               Rick & Morty Characters
             </Link>
           </Typography>

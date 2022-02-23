@@ -1,5 +1,6 @@
-import { gql } from 'apollo-boost';
-import { useQuery } from '@apollo/react-hooks';
+// import { gql } from 'apollo-boost';
+// import { useQuery } from '@apollo/react-hooks';
+import { gql, useQuery } from '@apollo/client';
 
 const GET_CHARACTERS = gql`
   query Characters($page: Int, $name: String, $gender: String, $species: String, $status: String, $type: String) {

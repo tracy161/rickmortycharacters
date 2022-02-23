@@ -1,7 +1,9 @@
-import gql from 'graphql-tag';
-import { useQuery } from '@apollo/react-hooks';
+// import { gql } from 'apollo-boost';
+// import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
+import gql from 'graphql-tag'
 
- export const GET_CHARACTER_DETAILS = gql`
+export const GET_CHARACTER_DETAILS = gql`
   query CharacterDetails($id: ID!) {
     character(id: $id) {
       id
@@ -29,6 +31,8 @@ export const UseCharacterDetails = ({ id }) => {
   const { loading, error, data } = useQuery(GET_CHARACTER_DETAILS, {
     variables: { id },
   });
+
+  //if (loading) return <p>Loading...</p>;
 
   return {
     data,
