@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import useCharacterDetails from '../../containerHooks/useCharacterDetails';
+import { UseCharacterDetails } from '../../containerHooks/useCharacterDetails';
 
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ import Moment from 'moment';
 
 const CharacterDetails = () => {
   const { id } = useParams();
-  const { data, loading, error } = useCharacterDetails(id);
+  const { data, loading, error } = UseCharacterDetails({ id });
 
   if (loading)
     return (
